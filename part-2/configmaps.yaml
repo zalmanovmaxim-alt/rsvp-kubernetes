@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rsvp-config
+  namespace: rsvp
+data:
+  MONGODB_HOST: mongodb.rsvp.svc.cluster.local
+  MONGODB_PORT: "27017"
+  MONGODB_DATABASE: rsvpdb
+

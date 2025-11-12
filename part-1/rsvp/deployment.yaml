@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rsvp
+  namespace: rsvp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rsvp
+  template:
+    metadata:
+      labels:
+        app: rsvp
+    spec:
+      containers:
+        - name: rsvp
+          image: teamcloudyuga/rsvpapp
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGODB_HOST
+              value: mongodb

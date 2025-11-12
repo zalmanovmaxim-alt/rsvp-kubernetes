@@ -1,0 +1,22 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: rsvp-pdb
+  namespace: rsvp
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: rsvp
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: mongodb-pdb
+  namespace: rsvp
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: mongodb
+
