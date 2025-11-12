@@ -4,7 +4,21 @@ Kubernetes deployment for RSVP application with MongoDB.
 
 ## Quick Start
 
-### Deploy Everything
+### Deploy Everything (Recommended)
+```powershell
+.\deploy.ps1
+```
+
+This script will:
+- Deploy all 5 parts automatically
+- Wait for pods to be ready
+- Start port-forward automatically in a background window
+- Display the access URL
+
+Then open: **http://localhost:31000**
+
+### Manual Deployment (Alternative)
+If you prefer to deploy manually:
 ```bash
 # Part 1: Basic deployment
 kubectl apply -f part-1/namespace.yaml
@@ -28,13 +42,10 @@ kubectl apply -f part-4/ -R
 # Part 5: Production readiness
 kubectl apply -f part-5/pdb.yaml
 kubectl apply -f part-5/deployments/ -R
-```
 
-### Access the App
-```bash
+# Then start port-forward manually
 kubectl port-forward -n rsvp svc/rsvp 31000:5000
 ```
-Then open: http://localhost:31000
 
 ### Shutdown
 ```powershell
