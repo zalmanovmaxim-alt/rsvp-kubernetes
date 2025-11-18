@@ -2,6 +2,11 @@
 
 Kubernetes deployment for RSVP application with MongoDB.
 
+## Prerequisites 
+-Docker Desktop installed
+-Kubernetes enabled in Docker Desktop
+-Docker Desktop must be running before executing deploy.ps1
+
 ## Quick Start
 
 ### Deploy Everything (Recommended)
@@ -33,7 +38,7 @@ kubectl apply -f part-2/ -R
 kubectl apply -f part-3/mongo/pvc.yaml
 kubectl apply -f part-3/ -R
 
-# Part 4: Ingress (optional)
+# Part 4: Ingress
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml
 kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.kubernetes.io/component=controller --timeout=90s
 kubectl apply -f part-4/ingress.yaml
