@@ -3,9 +3,9 @@
 Kubernetes deployment for RSVP application with MongoDB.
 
 ## Prerequisites 
--Docker Desktop installed
--Kubernetes enabled in Docker Desktop
--Docker Desktop must be running before executing deploy.ps1
+- Docker Desktop installed
+- Kubernetes enabled in Docker Desktop
+- Docker Desktop must be running before executing deploy.ps1
 
 ## Quick Start
 
